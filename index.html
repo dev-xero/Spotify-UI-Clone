@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Spotify - Web Player: Music for everyone</title>
+		<meta name="description" content="Spotify web player for Chrome.">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- favicon -->
+		<link rel="shortcut icon" href="./app-components/app-img/home/favicon-5cb2bd30.ico" type="image/x-icon">
+		<!-- Spotify web css scripts -->
+		<link rel="stylesheet" href="./app-components/app-scripts/Bootstrap icons/bootstrap-icons.css">
+		<link rel="stylesheet" href="./app-components/app-scripts/Boxicons/css/boxicons.min.css">
+		<link rel="stylesheet" href="./app-components/app-scripts/Line icons/font-css/LineIcons.css">
+		<link rel="stylesheet" href="./app-components/app-scripts/Tabler icons/tabler-icons.min.css">
+		<!-- Spotify main css file -->
+		<link rel="stylesheet" href="./app-components/spotify-css/style.css">
+
+	</head>
+	<body>
+
+		<section class="app" id="app">
+			<main class="main-app">
+				<nav class="sidebar" role="navigation" id="sidebar">
+					<section class="flex-top">
+						<a href="./index.html" class="sidebar-link-home">
+							<svg viewBox="0 0 1134 340" class="spotify-logo--text"><title>Spotify</title><path fill="currentColor" d="M8 171c0 92 76 168 168 168s168-76 168-168S268 4 176 4 8 79 8 171zm230 78c-39-24-89-30-147-17-14 2-16-18-4-20 64-15 118-8 162 19 11 7 0 24-11 18zm17-45c-45-28-114-36-167-20-17 5-23-21-7-25 61-18 136-9 188 23 14 9 0 31-14 22zM80 133c-17 6-28-23-9-30 59-18 159-15 221 22 17 9 1 37-17 27-54-32-144-35-195-19zm379 91c-17 0-33-6-47-20-1 0-1 1-1 1l-16 19c-1 1-1 2 0 3 18 16 40 24 64 24 34 0 55-19 55-47 0-24-15-37-50-46-29-7-34-12-34-22s10-16 23-16 25 5 39 15c0 0 1 1 2 1s1-1 1-1l14-20c1-1 1-1 0-2-16-13-35-20-56-20-31 0-53 19-53 46 0 29 20 38 52 46 28 6 32 12 32 22 0 11-10 17-25 17zm95-77v-13c0-1-1-2-2-2h-26c-1 0-2 1-2 2v147c0 1 1 2 2 2h26c1 0 2-1 2-2v-46c10 11 21 16 36 16 27 0 54-21 54-61s-27-60-54-60c-15 0-26 5-36 17zm30 78c-18 0-31-15-31-35s13-34 31-34 30 14 30 34-12 35-30 35zm68-34c0 34 27 60 62 60s62-27 62-61-26-60-61-60-63 27-63 61zm30-1c0-20 13-34 32-34s33 15 33 35-13 34-32 34-33-15-33-35zm140-58v-29c0-1 0-2-1-2h-26c-1 0-2 1-2 2v29h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v58c0 23 11 35 34 35 9 0 18-2 25-6 1 0 1-1 1-2v-21c0-1 0-2-1-2h-2c-5 3-11 4-16 4-8 0-12-4-12-12v-54h30c1 0 2-1 2-2v-22c0-1-1-2-2-2h-30zm129-3c0-11 4-15 13-15 5 0 10 0 15 2h1s1-1 1-2V93c0-1 0-2-1-2-5-2-12-3-22-3-24 0-36 14-36 39v5h-13c-1 0-2 1-2 2v22c0 1 1 2 2 2h13v89c0 1 1 2 2 2h26c1 0 1-1 1-2v-89h25l37 89c-4 9-8 11-14 11-5 0-10-1-15-4h-1l-1 1-9 19c0 1 0 3 1 3 9 5 17 7 27 7 19 0 30-9 39-33l45-116v-2c0-1-1-1-2-1h-27c-1 0-1 1-1 2l-28 78-30-78c0-1-1-2-2-2h-44v-3zm-83 3c-1 0-2 1-2 2v113c0 1 1 2 2 2h26c1 0 1-1 1-2V134c0-1 0-2-1-2h-26zm-6-33c0 10 9 19 19 19s18-9 18-19-8-18-18-18-19 8-19 18zm245 69c10 0 19-8 19-18s-9-18-19-18-18 8-18 18 8 18 18 18zm0-34c9 0 17 7 17 16s-8 16-17 16-16-7-16-16 7-16 16-16zm4 18c3-1 5-3 5-6 0-4-4-6-8-6h-8v19h4v-6h4l4 6h5zm-3-9c2 0 4 1 4 3s-2 3-4 3h-4v-6h4z"></path></svg>
+						</a>
+						<ul class="sidebar-links">
+							<li class="active link-s" id="home-component">
+								<a href="./index.html" id="home-link">
+									<svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor"></path></svg>
+									<span>Home</span>
+								</a>
+							</li>
+							<li class="link-s">
+								<a href="./index.html" id="search-link">
+									<svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M349.714 347.937l93.714 109.969-16.254 13.969-93.969-109.969q-48.508 36.825-109.207 36.825-36.826 0-70.476-14.349t-57.905-38.603-38.603-57.905-14.349-70.476 14.349-70.476 38.603-57.905 57.905-38.603 70.476-14.349 70.476 14.349 57.905 38.603 38.603 57.905 14.349 70.476q0 37.841-14.73 71.619t-40.889 58.921zM224 377.397q43.428 0 80.254-21.461t58.286-58.286 21.461-80.254-21.461-80.254-58.286-58.285-80.254-21.46-80.254 21.46-58.285 58.285-21.46 80.254 21.46 80.254 58.285 58.286 80.254 21.461z" fill="currentColor" fill-rule="evenodd"></path></svg>
+									<span>Search</span>
+								</a>
+							</li>
+							<li class="link-s">
+								<a href="./index.html" id="library-link">
+									<svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M291.301 81.778l166.349 373.587-19.301 8.635-166.349-373.587zM64 463.746v-384h21.334v384h-21.334zM192 463.746v-384h21.334v384h-21.334z" fill="currentColor"></path></svg>
+									<span>Your Library</span>
+								</a>
+							</li>
+							<li class="new-set" id="create-playlist">
+								<a href="./index.html">
+									<div><svg role="img" height="12" width="12" viewBox="0 0 16 16" class="Svg-ulyrgf-0 cMigZB"><path d="M14 7H9V2H7v5H2v2h5v5h2V9h5z"></path><path fill="none" d="M0 0h16v16H0z"></path></svg></div>
+									<span>Create Playlist</span>
+								</a>
+							</li>
+							<li class="liked-songs" id="liked-songs">
+								<a href="./index.html">
+									<div>
+										<svg role="img" height="12" width="12" viewBox="0 0 16 16" class="Svg-ulyrgf-0 cMigZB"><path fill="currentColor" d="M0 0h16v16H0z"></path><path d="M13.797 2.727a4.057 4.057 0 00-5.488-.253.558.558 0 01-.31.112.531.531 0 01-.311-.112 4.054 4.054 0 00-5.487.253c-.77.77-1.194 1.794-1.194 2.883s.424 2.113 1.168 2.855l4.462 5.223a1.791 1.791 0 002.726 0l4.435-5.195a4.052 4.052 0 001.195-2.883 4.057 4.057 0 00-1.196-2.883z"></path></svg>
+									</div>
+									<span>Liked Songs</span>
+								</a>
+							</li>
+							<li class="your-episodes">
+								<a href="./index.html">
+									<div>
+										<svg role="img" width="12" height="12" viewBox="0 0 527 483" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 264.208C1.5 119.17 118.974 1.5 264 1.5C409.026 1.5 526.5 119.17 526.5 264.208C526.5 351.905 483.535 429.569 417.628 477.247C406.996 484.938 392.595 481.729 385.684 471.362L376.758 457.971C369.699 447.382 372.818 433.617 382.485 426.529C432.426 389.914 464.783 330.851 464.783 264.208C464.783 153.128 374.839 63.1707 264 63.1707C153.161 63.1707 63.2173 153.128 63.2173 264.208C63.2173 330.851 95.5742 389.914 145.515 426.529C155.182 433.617 158.301 447.382 151.242 457.971L142.316 471.362C135.405 481.729 121.004 484.938 110.372 477.247C44.4653 429.569 1.5 351.905 1.5 264.208Z" fill="#1ED760"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M104.5 263.216C104.5 174.586 175.78 102.5 264 102.5C352.22 102.5 423.5 174.586 423.5 263.216C423.5 315.346 398.84 361.707 360.685 391.048C350.27 399.057 336.041 395.66 329.404 385.602L323.251 376.279C316.458 365.986 319.652 353.018 328.353 346.12C352.699 326.817 368.307 296.878 368.307 263.216C368.307 204.912 321.476 157.884 264 157.884C206.524 157.884 159.693 204.912 159.693 263.216C159.693 296.878 175.301 326.817 199.647 346.12C208.348 353.018 211.542 365.986 204.749 376.279L198.596 385.602C191.959 395.66 177.73 399.057 167.315 391.048C129.16 361.707 104.5 315.346 104.5 263.216Z" fill="#1ED760"></path><path fill-rule="evenodd" clip-rule="evenodd" d="M200.5 261C200.5 226.296 229.118 198.5 264 198.5C298.882 198.5 327.5 226.296 327.5 261C327.5 295.704 298.882 323.5 264 323.5C229.118 323.5 200.5 295.704 200.5 261Z" fill="#1ED760"></path></svg>
+									</div>
+									<span>Your Episodes</span>
+								</a>
+							</li>
+						</ul>
+						<ul id="playlists">
+							<li class="playlist">
+								<a href="./index.html">Chill Beats LoFi Hip Hop</a>
+							</li>
+							<li class="playlist">
+								<a href="./index.html">Alan Walker</a>
+							</li>
+						</ul>
+					</section>
+					<section class="install">
+						<a href="./index.html" id="install-app">
+							<svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ulyrgf-0 cMigZB"><path d="M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1 22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652 4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z"></path></svg>
+							<span>Install App</span>
+						</a>
+					</section>
+				</nav>
+				<section id="main-interface">
+					<div class="spacer"></div>
+					<div class="inner-interface">
+						<section id="top-bar">
+							<div class="navigation-arrows">
+								<a href="./index.html" class="focus-arrows" id="prev">
+									<svg role="img" focusable="false" height="24" width="24" viewBox="0 0 24 24" class="Svg-sc-1usfroi-0 hShlue _6fe5d5efc9b4a07d5c424071ac7cdacb-scss"><polyline points="16 4 7 12 16 20" fill="none" stroke="#181818" class=""></polyline></svg>
+								</a>
+								<a href="./index.html" class="focus-arrows" id="next">
+									<svg role="img" focusable="false" height="24" width="24" viewBox="0 0 24 24" class="Svg-sc-1usfroi-0 hShlue _6fe5d5efc9b4a07d5c424071ac7cdacb-scss st-current"><polyline points="8 4 17 12 8 20" fill="none" stroke="#181818"></polyline></svg>
+								</a>
+							</div>
+							<div class="t-functions">
+								<button id="get-premium" title="Upgrade to Premium"><a href="./index.html">Upgrade</a></button>
+								<div class="connectivity-status user-online">
+									<a href="./index.html" id="icon-internet">
+										<svg role="img" height="16" width="16" viewBox="0 0 16 16" class="Svg-ulyrgf-0 cMigZB"><path d="M12.715 3.341L13.89.703l-.913-.406-6.679 15 .913.406L8.414 13H11c2.75 0 5-2.25 5-5 0-2.143-1.38-3.954-3.285-4.659zM11 12H8.859l3.456-7.763C13.874 4.784 15 6.257 15 8c0 2.206-1.794 4-4 4zM8.79.297L7.586 3H5C2.25 3 0 5.25 0 8c0 2.143 1.38 3.954 3.285 4.659L2.11 15.297l.913.406 6.679-15L8.79.297zM3.684 11.763C2.126 11.216 1 9.743 1 8c0-2.206 1.794-4 4-4h2.141l-3.457 7.763z"></path><path fill="none" d="M16 0v16H0V0z"></path></svg>
+									</a>
+									<div class="tool-tip">
+										<span>
+											Make sure you're online. Spotify works best with an internet connection.
+										</span>
+										<a href="./index.html" id="close-tooltip">
+											<svg height="32" role="img" width="32" viewBox="0 0 24 24"><path d="M4.93,4.93,19.07,19.07m-14.14,0L19.07,4.93" fill="none" stroke="currentColor" stroke-miterlimit="10"></path></svg>
+										</a>
+									</div>
+								</div>
+								<section class="user-settings">
+									<button class="user-toggle">
+										<img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+										<span id="username"></span>
+										<a href="./index.html" id="show-options">
+											<!-- Up -->
+											<!-- <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M13 10L8 4.206 3 10z"></path></svg> -->
+											<svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
+										</a>
+									</button>
+									<ul class="user-account"></ul>
+								</section>
+							</div>
+						</section>
+					</div>
+				</section>
+			</main>
+			<section class="bottom-bar"></section>
+		</div>
+
+	
+		<!-- Spotify main js files -->
+		<script src="./app-components/spotify-js-files/music-library.js"></script>
+		<script src="./app-components/spotify-js-files/config.js"></script>
+		<script src="./app-components/spotify-js-files/script.js"></script>
+	</body>
+</html>
