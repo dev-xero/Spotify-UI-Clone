@@ -36,12 +36,11 @@ function checkAccount() {
 
 sidebarLinks.forEach((component) => {
   component.addEventListener(
-    `.click`,
+    `click`,
     (e) => {
       e.preventDefault();
-      // eslint-disable-next-line no-shadow
-      sidebarLinks.forEach((component) => {
-        component.classList.remove(`active`);
+      sidebarLinks.forEach((hookNode) => {
+        hookNode.classList.remove(`active`);
       });
       component.classList.add(`active`);
       if (sidebarHomeComponent.classList.contains(`active`)) {
