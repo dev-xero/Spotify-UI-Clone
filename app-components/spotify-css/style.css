@@ -1,587 +1,670 @@
 /* Fonts */
 
 @font-face {
-	font-family: Spotify-Circular-bl;
-	src: url("../app-fonts/Circular\ Font\ Family/CircularStd-Black.ttf");
+  font-family: Spotify-Circular-bl;
+  src: url('../app-fonts/Circular\ Font\ Family/CircularStd-Black.ttf');
 }
 
 @font-face {
-	font-family: Spotify-Circular-b;
-	src: url("../app-fonts/Circular\ Font\ Family/CircularStd-Book.ttf");
+  font-family: Spotify-Circular-b;
+  src: url('../app-fonts/Circular\ Font\ Family/CircularStd-Book.ttf');
 }
 
 @font-face {
-	font-family: Spotify-Circular-m;
-	src: url("../app-fonts/Circular\ Font\ Family/CircularStd-Medium.ttf");
+  font-family: Spotify-Circular-m;
+  src: url('../app-fonts/Circular\ Font\ Family/CircularStd-Medium.ttf');
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: "system-ui", sans-serif;
-	font-weight:  600 !important;
-	letter-spacing: 0.78px;
-	text-decoration: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'system-ui', sans-serif;
+  font-weight: 600 !important;
+  letter-spacing: 0.78px;
+  text-decoration: none;
 }
 
 /* html adjustments */
 
 html {
-	font-size: 15px;
-	scroll-behavior: smooth;
+  font-size: 15px;
+  scroll-behavior: smooth;
 }
 
 /* App styles */
 
 .app {
-	position: relative;
-	height: 100vh;
-	width: 100%;
-	overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
 .app main.main-app {
-	background: linear-gradient(0deg, #181818 60%, #212121);
-	position: relative;
-	overflow-y: scroll;
-	height: 90%;
+  background: linear-gradient(0deg, #181818 60%, #212121);
+  position: relative;
+  overflow-y: scroll;
+  height: 90%;
 }
 
 .app main.main-app::-webkit-scrollbar {
-	width: 14px;
+  width: 14px;
 }
 
 .app main.main-app::-webkit-scrollbar-thumb:hover {
-	background: #787878FF;
+  background: #787878ff;
 }
 
 .app main.main-app::-webkit-scrollbar-thumb {
-	width: 14px;
-	background: #78787890;
-	border-top: 2px solid #1C1C1C;
-	border-right: 2px solid #1C1C1C;
-	border-bottom: 2px solid #1C1C1C;
+  width: 14px;
+  background: #78787890;
+  border-top: 2px solid #1c1c1c;
+  border-right: 2px solid #1c1c1c;
+  border-bottom: 2px solid #1c1c1c;
 }
 
 /* Side bar */
 
 .app main.main-app nav.sidebar {
-	background: #000000;
-	position: fixed;
-	display: flex;
-	top: 0;
-	left: 0;
-	height: 90%;
-	width: 280px;
-	flex-direction: column;
-	justify-content: space-between;
-	overflow-y: auto;
+  background: #000000;
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  height: 90%;
+  width: 280px;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
 }
 
 .app main.main-app nav.sidebar a.sidebar-link-home {
-	display: inline-block;
-	width: 100%;
-	color: #FFFFFF;
-	margin-top: 8px;
-	padding: 13px;
-	padding-left: 18px;
+  display: inline-block;
+  width: 100%;
+  color: #ffffff;
+  margin-top: 8px;
+  padding: 13px;
+  padding-left: 18px;
 }
 
 .app main.main-app nav.sidebar a.sidebar-link-home svg {
-	max-width: 104px;
+  max-width: 104px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links {
-	margin: 8px;
-	padding: 4px;
-	padding-bottom: 14px;
-	border-bottom: 1px solid #28282860;
+  margin: 8px;
+  padding: 4px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #28282860;
 }
 
 .app main.main-app nav.sidebar::-webkit-scrollbar {
-	width: 11px;
+  width: 11px;
 }
 
 .app main.main-app nav.sidebar::-webkit-scrollbar-thumb {
-	width: 11px;
-	background: #787878;
-	border-top: 2px solid #000000;
-	border-right: 2px solid #000000;
-	border-bottom: 2px solid #000000;
+  width: 11px;
+  background: #787878;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li {
-	display: block;
-	list-style: none;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
-	transition: background-color 0.05s ease-in;
-	-webkit-transition: background-color 0.05s ease-in;
-	-moz-transition: background-color 0.05s ease-in;
-	-ms-transition: background-color 0.05s ease-in;
-	-o-transition: background-color 0.05s ease-in;
+  display: block;
+  list-style: none;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: background-color 0.05s ease-in;
+  -webkit-transition: background-color 0.05s ease-in;
+  -moz-transition: background-color 0.05s ease-in;
+  -ms-transition: background-color 0.05s ease-in;
+  -o-transition: background-color 0.05s ease-in;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.active {
-	background: #282828;
+  background: #282828;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li a:hover,
 .app main.main-app nav.sidebar ul.sidebar-links li.active a {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li a {
-	cursor: default !important;
-	display: flex;
-	align-items: center;
-	color: #B3B3B3;
-	font-weight: 600;
-	font-size: 0.78rem;
-	padding: 6px 12px;
-	transition: color 0.15s ease-in;
-	-webkit-transition: color 0.15s ease-in;
-	-moz-transition: color 0.15s ease-in;
-	-ms-transition: color 0.15s ease-in;
-	-o-transition: color 0.15s ease-in;
+  cursor: default !important;
+  display: flex;
+  align-items: center;
+  color: #b3b3b3;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  transition: color 0.15s ease-in;
+  -webkit-transition: color 0.15s ease-in;
+  -moz-transition: color 0.15s ease-in;
+  -ms-transition: color 0.15s ease-in;
+  -o-transition: color 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li div {
-	transition: background-color 0.15s ease-in;
-	-webkit-transition: background-color 0.15s ease-in;
-	-moz-transition: background-color 0.15s ease-in;
-	-ms-transition: background-color 0.15s ease-in;
-	-o-transition: background-color 0.15s ease-in;
+  transition: background-color 0.15s ease-in;
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -ms-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li a svg {
-	max-width: 20px;
+  max-width: 20px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li a span {
-	margin-left: 12px;
+  margin-left: 12px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.new-set {
-	margin-top: 24px;
+  margin-top: 24px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.new-set:hover div {
-	background: #FFFFFF !important;
+  background: #ffffff !important;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.new-set div {
-    align-items: center;
-    background: #B3B3B3;
-    border-radius: 1px;
-    color: #000000;
-    display: flex;
-    height: 20px;
-    justify-content: center;
-    width: 20px;
+  align-items: center;
+  background: #b3b3b3;
+  border-radius: 1px;
+  color: #000000;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.liked-songs a svg {
-	color: transparent;
-	fill: #B3B3B3;
-	transition: fill 0.15s ease-in;
-	-webkit-transition: fill 0.15s ease-in;
-	-moz-transition: fill 0.15s ease-in;
-	-ms-transition: fill 0.15s ease-in;
-	-o-transition: fill 0.15s ease-in;
+  color: transparent;
+  fill: #b3b3b3;
+  transition: fill 0.15s ease-in;
+  -webkit-transition: fill 0.15s ease-in;
+  -moz-transition: fill 0.15s ease-in;
+  -ms-transition: fill 0.15s ease-in;
+  -o-transition: fill 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.liked-songs:hover svg {
-	fill: #FFFFFF !important;
+  fill: #ffffff !important;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.liked-songs:hover div {
-	background: linear-gradient(135deg,#450AF5,#C4EFD9);
+  background: linear-gradient(135deg, #450af5, #c4efd9);
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.liked-songs div {
-	align-items: center;
-	background: linear-gradient(135deg,#450AF5,#afd6c2);
-	border-radius: 1px;
-	display: flex;
-	height: 20px;
-	justify-content: center;
-	width: 20px;
+  align-items: center;
+  background: linear-gradient(135deg, #450af5, #afd6c2);
+  border-radius: 1px;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.your-episodes:hover div {
-	background: #087e66;
+  background: #087e66;
 }
 
 .app main.main-app nav.sidebar ul.sidebar-links li.your-episodes div {
-	background: #055746;
-	align-items: center;
-	border-radius: 2px;
-	display: flex;
-	height: 20px;
-	justify-content: center;
-	width: 20px;
-	-webkit-border-radius: 2px;
-	-moz-border-radius: 2px;
-	-ms-border-radius: 2px;
-	-o-border-radius: 2px;
+  background: #055746;
+  align-items: center;
+  border-radius: 2px;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  width: 20px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
 }
 
 .app main.main-app nav.sidebar ul#playlists {
-	margin: 8px;
-	padding: 4px;
-	padding-bottom: 14px;
-	height: 50%;
-	overflow-y: auto;
+  margin: 8px;
+  padding: 4px;
+  padding-bottom: 14px;
+  height: 50%;
+  overflow-y: auto;
 }
 
 .app main.main-app nav.sidebar ul#playlists li {
-	display: block;
-	list-style: none;
-	border-radius: 4px;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	-ms-border-radius: 4px;
-	-o-border-radius: 4px;
-	display: flex;
-	align-items: center;
+  display: block;
+  list-style: none;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  display: flex;
+  align-items: center;
 }
 
 .app main.main-app nav.sidebar ul#playlists li:hover a {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .app main.main-app nav.sidebar ul#playlists li a {
-	cursor: default !important;
-	display: block;
-	color: #B3B3B3;
-	font-weight: 600;
-	font-size: 0.78rem;
-	padding: 6px 12px;
-	transition: color 0.15s ease-in;
-	-webkit-transition: color 0.15s ease-in;
-	-moz-transition: color 0.15s ease-in;
-	-ms-transition: color 0.15s ease-in;
-	-o-transition: color 0.15s ease-in;
+  cursor: default !important;
+  display: block;
+  color: #b3b3b3;
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  transition: color 0.15s ease-in;
+  -webkit-transition: color 0.15s ease-in;
+  -moz-transition: color 0.15s ease-in;
+  -ms-transition: color 0.15s ease-in;
+  -o-transition: color 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar ul#playlists::-webkit-scrollbar {
-	width: 11px;
+  width: 11px;
 }
 
 .app main.main-app nav.sidebar ul#playlists::-webkit-scrollbar-thumb {
-	width: 11px;
-	background: #787878;
-	border-top: 2px solid #000000;
-	border-right: 2px solid #000000;
-	border-bottom: 2px solid #000000;
+  width: 11px;
+  background: #787878;
+  border-top: 2px solid #000000;
+  border-right: 2px solid #000000;
+  border-bottom: 2px solid #000000;
 }
 
 .app main.main-app nav.sidebar section.install {
-	padding-left: 16px;
-	padding-bottom: 12px;
+  padding-left: 16px;
+  padding-bottom: 12px;
 }
 
 .app main.main-app nav.sidebar section.install a {
-	color: #B3B3B3;
-	display: flex;
-	align-items: center;
-	font-size: 0.78rem;
-	transition: color 0.15s ease-in;
-	-webkit-transition: color 0.15s ease-in;
-	-moz-transition: color 0.15s ease-in;
-	-ms-transition: color 0.15s ease-in;
-	-o-transition: color 0.15s ease-in;
+  color: #b3b3b3;
+  display: flex;
+  align-items: center;
+  font-size: 0.78rem;
+  transition: color 0.15s ease-in;
+  -webkit-transition: color 0.15s ease-in;
+  -moz-transition: color 0.15s ease-in;
+  -ms-transition: color 0.15s ease-in;
+  -o-transition: color 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar section.install a:hover {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .app main.main-app nav.sidebar section.install a:hover svg {
-	fill: #FFFFFF;
+  fill: #ffffff;
 }
 
 .app main.main-app nav.sidebar section.install a svg {
-	fill: #B3B3B3;
-	max-width: 20px;
-	transition: fill 0.15s ease-in;
-	-webkit-transition: fill 0.15s ease-in;
-	-moz-transition: fill 0.15s ease-in;
-	-ms-transition: fill 0.15s ease-in;
-	-o-transition: fill 0.15s ease-in;
+  fill: #b3b3b3;
+  max-width: 20px;
+  transition: fill 0.15s ease-in;
+  -webkit-transition: fill 0.15s ease-in;
+  -moz-transition: fill 0.15s ease-in;
+  -ms-transition: fill 0.15s ease-in;
+  -o-transition: fill 0.15s ease-in;
 }
 
 .app main.main-app nav.sidebar section.install a span {
-	margin-left: 12px;
+  margin-left: 12px;
 }
 
 .spacer {
-	position: relative;
-	top: 0;
-	left: 0;
-	height: 90vh;
-	width: 280px;
-	z-index: -2;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 90vh;
+  width: 280px;
+  z-index: -2;
 }
 
 section#main-interface {
-	display: flex;
+  display: flex;
 }
 
 .app main.main-app .inner-interface {
-	width: calc(100% - 278px);
-	color: #B3B3B3;
-	padding: 20px;
+  width: calc(100% - 278px);
+  color: #b3b3b3;
+  padding: 20px;
 }
 
 .app main.main-app .inner-interface p {
-	font-weight: 400 !important;
+  font-weight: 400 !important;
 }
 
 /* Top bar */
 
 .app main.main-app section#top-bar {
-	position: fixed;
-	display: flex;
-	z-index: 0;
-	top: 0;
-	right: 0;
-	background: #080808;
-	height: 9vh;
-	width: calc(100% - 280px);
-	padding: 8px 16px;
-	justify-content: space-between;
-	align-items: center;
+  position: fixed;
+  display: flex;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  background: #080808;
+  height: 9vh;
+  width: calc(100% - 280px);
+  padding: 8px 16px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .app main.main-app section#top-bar a.focus-arrows {
-	color: #FFFFFF;
-	background: #000000;
-	display: inline-block;
-	width: 32px;
-	height: 32px;
-	line-height: 32px;
-	text-align: center;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
-	margin-right: 4px;
+  color: #ffffff;
+  background: #000000;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 4px;
 }
 
 .app main.main-app section#top-bar a.focus-arrows svg {
-	position: relative;
-	top: 4px;
+  position: relative;
+  top: 4px;
 }
 
 .app main.main-app section#top-bar a.focus-arrows svg polyline {
-	stroke: #FFFFFF !important;
-	stroke-width: 1.1px;
+  stroke: #ffffff !important;
+  stroke-width: 1.1px;
 }
 
 .app main.main-app section#top-bar .t-functions {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .app main.main-app section#top-bar .t-functions button#get-premium {
-	border: 1px solid #B3B3B3;
-	background: transparent;
-	outline: none !important;
-	padding: 8px 34px;
-	text-transform: uppercase;
-	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
-	cursor: pointer;
-	transition: border-color 0.15s ease-in;
-	-webkit-transition: border-color 0.15s ease-in;
-	-moz-transition: border-color 0.15s ease-in;
-	-ms-transition: border-color 0.15s ease-in;
-	-o-transition: border-color 0.15s ease-in;
+  border: 1px solid #b3b3b3;
+  background: transparent;
+  outline: none !important;
+  padding: 8px 34px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  cursor: pointer;
+  transition: border-color 0.15s ease-in;
+  -webkit-transition: border-color 0.15s ease-in;
+  -moz-transition: border-color 0.15s ease-in;
+  -ms-transition: border-color 0.15s ease-in;
+  -o-transition: border-color 0.15s ease-in;
+}
+
+.app main.main-app section#top-bar .t-functions button#get-premium.inner-space {
+  margin-right: 24px;
 }
 
 .app main.main-app section#top-bar .t-functions button#get-premium.pro-user {
-	display: none;
+  display: none;
 }
 
 .app main.main-app section#top-bar .t-functions button#get-premium:hover {
-	border-color: #FFFFFF;
+  border-color: #ffffff;
 }
 
 .app main.main-app section#top-bar .t-functions button#get-premium a {
-	color: #EEEEEE;
-	font-size: 0.78rem !important;
-	font-weight: 700 !important;
-	letter-spacing: 1px !important;
-	font-family: "Spotify-Circular-bl", serif;
+  color: #eeeeee;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  font-family: 'Spotify-Circular-bl', serif;
 }
 
 .app main.main-app section#top-bar .t-functions .connectivity-status {
-	position: relative;
-	display: inline-block;
+  position: relative;
+  display: inline-block;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status.user-online {
-	display: none;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status.user-online {
+  display: none;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status a#icon-internet {
-	display: flex;
-	position: relative;
-	align-items: center;
-	justify-content: center;
-	width: 32px;
-	height: 32px;
-	background-color: #2E77D0;
-	border: none;
-	border-radius: 50%;
-	text-align: center;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
-	margin: 0 12px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  a#icon-internet {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #2e77d0;
+  border: none;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin: 0 12px;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status a#icon-internet svg {
-	fill: #FFFFFF;
-	max-width: 20px;
-	width: 20px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  a#icon-internet
+  svg {
+  fill: #ffffff;
+  max-width: 20px;
+  width: 20px;
 }
 
 .app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip {
-	display: none;
-	position: absolute;
-	margin-top: 20px;
-	right: -20px;
-	background: #2E77D0;
-	width: 300px;
-	border-radius: 8px;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	-ms-border-radius: 8px;
-	-o-border-radius: 8px;
-	box-shadow: 0 0 16px #00000080;
-	padding: 14px;
+  display: none;
+  position: absolute;
+  margin-top: 20px;
+  right: -20px;
+  background: #2e77d0;
+  width: 300px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  box-shadow: 0 0 16px #00000080;
+  padding: 14px;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip.visible {
-	display: flex;
-} 
-
-.app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip::before {
-	content: "";
-	position: absolute;
-	top: -5px;
-	right: 38px;
-	width: 15px;
-	height: 15px;
-	background: #2E77D0;
-	transform: rotate(45deg);
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  .tool-tip.visible {
+  display: flex;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip span {
-	font-family: "Spotify-Circular-b", sans-serif;
-	color: #FFFFFF;
-	font-weight: 400 !important;
-	font-size: 0.9rem;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  .tool-tip::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: 38px;
+  width: 15px;
+  height: 15px;
+  background: #2e77d0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip a {
-	color: #FFFFFF;
-	font-size: 0.7rem;
-	display: flex;
-	align-items: flex-start;
-	margin-left: 12px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  .tool-tip
+  span {
+  font-family: 'Spotify-Circular-b', sans-serif;
+  color: #ffffff;
+  font-weight: 400 !important;
+  font-size: 0.9rem;
 }
 
-.app main.main-app section#top-bar .t-functions .connectivity-status .tool-tip a svg {
-	width: 20px;
-	max-width: 20px;
-	height: 20px;
-	max-height: 20px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  .tool-tip
+  a {
+  color: #ffffff;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  .connectivity-status
+  .tool-tip
+  a
+  svg {
+  width: 20px;
+  max-width: 20px;
+  height: 20px;
+  max-height: 20px;
 }
 
 .app main.main-app section#top-bar .t-functions section.user-settings {
-	display: inline-block;
+  display: inline-block;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle {
-	display: flex;
-	align-items: center;
-	border-radius: 50px;
-	-webkit-border-radius: 50px;
-	-moz-border-radius: 50px;
-	-ms-border-radius: 50px;
-	-o-border-radius: 50px;
-	border: none;
-	outline: none !important;
-	background: #000000;
-	padding: 2px;
-	cursor: pointer;
-	transition: background-color 0.15s ease-in;
-	-webkit-transition: background-color 0.15s ease-in;
-	-moz-transition: background-color 0.15s ease-in;
-	-ms-transition: background-color 0.15s ease-in;
-	-o-transition: background-color 0.15s ease-in;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle {
+  display: flex;
+  align-items: center;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  border: none;
+  outline: none !important;
+  background: #000000;
+  padding: 2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease-in;
+  -webkit-transition: background-color 0.15s ease-in;
+  -moz-transition: background-color 0.15s ease-in;
+  -ms-transition: background-color 0.15s ease-in;
+  -o-transition: background-color 0.15s ease-in;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle:hover {
-	background: #181818;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle:hover {
+  background: #181818;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle img {
-	max-width: 28px;
-	width: 28px;
-	max-height: 28px;
-	height: 28px;
-	border-radius: 50%;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	-ms-border-radius: 50%;
-	-o-border-radius: 50%;
-	margin-right: 2px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle
+  img {
+  max-width: 28px;
+  width: 28px;
+  max-height: 28px;
+  height: 28px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  margin-right: 2px;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle span {
-	display: inline-block;
-	color: #FFFFFF;
-	font-family: "Spotify-Circular-b", sans-serif;
-	color: #FFFFFF;
-	font-weight: 400 !important;
-	font-size: 0.78rem;
-	min-width: 100px;
-	padding-right: 2px;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle
+  span {
+  display: inline-block;
+  color: #ffffff;
+  font-family: 'Spotify-Circular-b', sans-serif;
+  color: #ffffff;
+  font-weight: 400 !important;
+  font-size: 0.78rem;
+  min-width: 100px;
+  padding-right: 2px;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle a#show-options {
-	margin-right: 2px;
-	padding-right: 2px;
-	color: #FFFFFF;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle
+  a#show-options {
+  margin-right: 2px;
+  padding-right: 2px;
+  color: #ffffff;
 }
 
-.app main.main-app section#top-bar .t-functions section.user-settings button.user-toggle a#show-options svg {
-	fill: #FFFFFF;
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle
+  a#show-options
+  svg {
+  fill: #ffffff;
 }
 
 /* Bottom bar */
 
 .app section.bottom-bar {
-	position: relative;
-	background: #121212;
-	border-top: 1px solid #181818;
-	height: 10%;
+  position: relative;
+  background: #121212;
+  border-top: 1px solid #181818;
+  height: 10%;
 }

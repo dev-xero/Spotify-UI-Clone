@@ -1,34 +1,34 @@
 // Variables declaration
 
-const appComponent = document.querySelector(`"#app"`);
-const appSideBar = document.querySelector(`'nav#sidebar'`);
-const sidebarHome = document.querySelector(`'a#home-link'`);
-const newLocalNode = `'li#home-component'`;
+const appComponent = document.querySelector(`section#app`);
+const appSideBar = document.querySelector(`nav#sidebar`);
+const sidebarHome = document.querySelector(`a#home-link`);
+const newLocalNode = `li#home-component`;
 const sidebarHomeComponent = document.querySelector(newLocalNode);
-const upgradeBtn = document.querySelector(`'button#get-premium'`);
+const upgradeBtn = document.querySelector(`button#get-premium`);
 
-const sidebarLinks = appSideBar.querySelectorAll(`'li.link-s'`);
+const sidebarLinks = appSideBar.querySelectorAll(`li.link-s`);
 // const sidebarLinksAnchor = appSideBar.querySelectorAll("li.link-s > a");
-const connectivityContainer = document.querySelector(`'.connectivity-status'`);
-const connectivityStatus = document.querySelector(`'a#icon-internet'`);
-const connectivityToolTip = document.querySelector(`'.tool-tip'`);
-const closeConnectivityStatus = document.querySelector(`'a#close-tooltip'`);
-const displayUsername = appComponent.querySelector(`'span#username'`);
+const connectivityContainer = document.querySelector(`.connectivity-status`);
+const connectivityStatus = document.querySelector(`a#icon-internet`);
+const connectivityToolTip = document.querySelector(`.tool-tip`);
+const closeConnectivityStatus = document.querySelector(`a#close-tooltip`);
+const displayUsername = appComponent.querySelector(`span#username`);
 
 // Check user account type from browser storage
 
 function checkAccount() {
   // Check if the user is a Pro or Free member
-  const accountType = localStorage.getItem(`'accountType'`);
-  JSON.stringify(`'accountType'`);
-  if (accountType.match(`'Free'`)) {
-    upgradeBtn.classList.remove(`'pro-user'`);
+  const accountType = localStorage.getItem(`accountType`);
+  JSON.stringify(`accountType`);
+  if (accountType.match(`Free`)) {
+    upgradeBtn.classList.remove(`pro-user`);
   } else {
-    upgradeBtn.classList.add(`'pro-user'`);
+    upgradeBtn.classList.add(`pro-user`);
   }
   // Set display username from browser settings
-  const accountUserName = localStorage.getItem(`'username'`);
-  JSON.stringify(`'accountUserName'`);
+  const accountUserName = localStorage.getItem(`username`);
+  JSON.stringify(`accountUserName`);
   displayUsername.innerHTML = accountUserName;
 }
 
@@ -36,15 +36,15 @@ function checkAccount() {
 
 sidebarLinks.forEach((component) => {
   component.addEventListener(
-    `.'click'`,
+    `.click`,
     (e) => {
       e.preventDefault();
       // eslint-disable-next-line no-shadow
       sidebarLinks.forEach((component) => {
-        component.classList.remove(`'active'`);
+        component.classList.remove(`active`);
       });
-      component.classList.add(`'active'`);
-      if (sidebarHomeComponent.classList.contains(`'active'`)) {
+      component.classList.add(`active`);
+      if (sidebarHomeComponent.classList.contains(`active`)) {
         sidebarHome.innerHTML = `
 			<svg viewBox="0 0 512 512" width="24" height="24" xmlns="http://www.w3.org/2000/svg"><path d="M448 463.746h-149.333v-149.333h-85.334v149.333h-149.333v-315.428l192-111.746 192 110.984v316.19z" fill="currentColor"></path></svg>
 			<span>Home</span>
@@ -64,9 +64,11 @@ sidebarLinks.forEach((component) => {
 
 function hasNetwork(online) {
   if (online) {
-    connectivityContainer.classList.add(`'user-online'`);
+    connectivityContainer.classList.add(`user-online`);
+    upgradeBtn.classList.add(`inner-space`);
   } else {
-    connectivityContainer.classList.remove(`'user-online'`);
+    connectivityContainer.classList.remove(`user-online`);
+    upgradeBtn.classList.remove(`inner-space`);
   }
 }
 
@@ -74,11 +76,11 @@ function hasNetwork(online) {
 
 window.onload = () => {
   hasNetwork(navigator.onLine);
-  window.addEventListener(`'online'`, () => {
+  window.addEventListener(`online`, () => {
     hasNetwork(true);
   });
 
-  window.addEventListener(`'offline'`, () => {
+  window.addEventListener(`offline`, () => {
     hasNetwork(false);
   });
 
@@ -90,13 +92,13 @@ window.onload = () => {
 // When connectivity icon is clicked, display tooltip
 
 connectivityStatus.addEventListener(
-  `'click'`,
+  `click`,
   (e) => {
     e.preventDefault();
-    if (connectivityToolTip.classList.contains(`'visible'`)) {
-      connectivityToolTip.classList.remove(`'visible'`);
+    if (connectivityToolTip.classList.contains(`visible`)) {
+      connectivityToolTip.classList.remove(`visible`);
     } else {
-      connectivityToolTip.classList.add(`'visible'`);
+      connectivityToolTip.classList.add(`visible`);
     }
   },
   false
@@ -105,10 +107,10 @@ connectivityStatus.addEventListener(
 // Close tooltip when close icon is clicked
 
 closeConnectivityStatus.addEventListener(
-  `'click'`,
+  `click`,
   (e) => {
     e.preventDefault();
-    connectivityToolTip.classList.remove(`'visible'`);
+    connectivityToolTip.classList.remove(`visible`);
   },
   false
 );
