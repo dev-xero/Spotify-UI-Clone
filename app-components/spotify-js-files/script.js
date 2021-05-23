@@ -6,7 +6,9 @@ const sidebarHome = document.querySelector(`a#home-link`);
 const newLocalNode = `li#home-component`;
 const sidebarHomeComponent = document.querySelector(newLocalNode);
 const upgradeBtn = document.querySelector(`button#get-premium`);
+const mainInterface = appComponent.querySelector(`.main-app`);
 
+const mainHeader = appComponent.querySelector(`#top-bar`);
 const sidebarLinks = appSideBar.querySelectorAll(`li.link-s`);
 // const sidebarLinksAnchor = appSideBar.querySelectorAll("li.link-s > a");
 const connectivityContainer = document.querySelector(`.connectivity-status`);
@@ -14,6 +16,9 @@ const connectivityStatus = document.querySelector(`a#icon-internet`);
 const connectivityToolTip = document.querySelector(`.tool-tip`);
 const closeConnectivityStatus = document.querySelector(`a#close-tooltip`);
 const displayUsername = appComponent.querySelector(`span#username`);
+const profileBtn = appComponent.querySelector(`button.user-toggle`);
+const userListPanel = appComponent.querySelector(`ul#user-account `);
+const offlineWrapper = appComponent.querySelector(`div.offline-wrapper`);
 
 // Check user account type from browser storage
 
@@ -32,7 +37,21 @@ function checkAccount() {
   displayUsername.innerHTML = accountUserName;
 }
 
-// Attach click event for all lists in the ul
+// Check connectivity function
+
+function hasNetwork(online) {
+  if (online) {
+    connectivityContainer.classList.add(`user-online`);
+    upgradeBtn.classList.add(`inner-space`);
+    offlineWrapper.classList.add(`user-connected`);
+  } else {
+    connectivityContainer.classList.remove(`user-online`);
+    upgradeBtn.classList.remove(`inner-space`);
+    offlineWrapper.classList.remove(`user-connected`);
+  }
+}
+
+// Attach click event for all lists in the sidebar
 
 sidebarLinks.forEach((component) => {
   component.addEventListener(
@@ -59,18 +78,6 @@ sidebarLinks.forEach((component) => {
   );
 });
 
-// Check connectivity function
-
-function hasNetwork(online) {
-  if (online) {
-    connectivityContainer.classList.add(`user-online`);
-    upgradeBtn.classList.add(`inner-space`);
-  } else {
-    connectivityContainer.classList.remove(`user-online`);
-    upgradeBtn.classList.remove(`inner-space`);
-  }
-}
-
 // When window loads, check for connectivity
 
 window.onload = () => {
@@ -93,7 +100,22 @@ window.onload = () => {
 connectivityStatus.addEventListener(
   `click`,
   (e) => {
+    // Get username which is to be stringified
+    // Get username from browser settings
+    const eventUser = localStorage.getItem(`username`);
+    JSON.stringify(`accountUserName`);
     e.preventDefault();
+    // Disable panel for the mean while
+    userListPanel.classList.remove(`panel-visible`);
+    profileBtn.classList.remove(`active`);
+    // Set SVG to the arrow down icon
+    profileBtn.innerHTML = `
+      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <span id="username">${eventUser}</span>
+      <a href="./index.html" id="show-options">
+      <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
+      </a>
+      `;
     if (connectivityToolTip.classList.contains(`visible`)) {
       connectivityToolTip.classList.remove(`visible`);
     } else {
@@ -110,6 +132,56 @@ closeConnectivityStatus.addEventListener(
   (e) => {
     e.preventDefault();
     connectivityToolTip.classList.remove(`visible`);
+  },
+  false
+);
+
+// When the profile button is clicked show the panel
+
+profileBtn.addEventListener(
+  `click`,
+  (e) => {
+    // Disable tooltip for the meanwhile
+    connectivityToolTip.classList.remove(`visible`);
+    // Get username from browser settings
+    const eventUser = localStorage.getItem(`username`);
+    JSON.stringify(`accountUserName`);
+    e.preventDefault();
+    if (userListPanel.classList.contains(`panel-visible`)) {
+      userListPanel.classList.remove(`panel-visible`);
+      profileBtn.innerHTML = `
+      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <span id="username">${eventUser}</span>
+      <a href="./index.html" id="show-options">
+      <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
+      </a>
+      `;
+      profileBtn.classList.remove(`active`);
+    } else {
+      userListPanel.classList.add(`panel-visible`);
+      profileBtn.innerHTML = `
+      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <span id="username">${eventUser}</span>
+      <a href="./index.html" id="show-options">
+      <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M13 10L8 4.206 3 10z"></path></svg>
+      </a>
+      `;
+      profileBtn.classList.add(`active`);
+    }
+  },
+  false
+);
+
+// When the user scrolls, make the top bar opaque
+
+mainInterface.addEventListener(
+  `scroll`,
+  () => {
+    if (mainInterface.scrollTop > 10 || mainInterface.scrollTop > 10) {
+      mainHeader.classList.add(`opaqueBar`);
+    } else {
+      mainHeader.classList.remove(`opaqueBar`);
+    }
   },
   false
 );
