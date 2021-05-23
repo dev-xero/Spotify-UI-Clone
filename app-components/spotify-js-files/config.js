@@ -1,8 +1,8 @@
 window.addEventListener(
   `load`,
   () => {
-    localStorage.setItem(`username`, `Code Ninja 15`);
-    localStorage.setItem(`accountType`, `Free`);
+    localStorage.setItem(`username`, `Chuka Okafor`);
+    localStorage.setItem(`accountType`, `Pro`);
   },
   false
 );
