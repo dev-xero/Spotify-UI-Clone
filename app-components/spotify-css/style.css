@@ -806,6 +806,17 @@ section#main-interface {
   margin-top: 9vh;
 }
 
+.app .music-interface section#userProfile {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: calc(100% - 280px);
+  height: calc(100% - 10vh);
+  overflow-y: auto;
+  background: #8b113a;
+}
+
 /* Bottom bar */
 
 .app section.bottom-bar {
