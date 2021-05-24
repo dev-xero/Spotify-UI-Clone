@@ -19,6 +19,10 @@ const displayUsername = appComponent.querySelector(`span#username`);
 const profileBtn = appComponent.querySelector(`button.user-toggle`);
 const userListPanel = appComponent.querySelector(`ul#user-account `);
 const offlineWrapper = appComponent.querySelector(`div.offline-wrapper`);
+const settingsDisplayUsername = appComponent.querySelector(`#profile-name`);
+
+const profileOption = appComponent.querySelector(`a#profile`);
+const userProfileOverlay = appComponent.querySelector(`section#userProfile`);
 
 // Check user account type from browser storage
 
@@ -31,10 +35,14 @@ function checkAccount() {
   } else {
     upgradeBtn.classList.add(`pro-user`);
   }
-  // Set display username from browser settings
+  // Set display username from browser storage
   const accountUserName = localStorage.getItem(`username`);
   JSON.stringify(`accountUserName`);
   displayUsername.innerHTML = accountUserName;
+  // Set display username for settings from browser storage
+  const displayNode = localStorage.getItem(`username`);
+  JSON.stringify(displayNode);
+  settingsDisplayUsername.innerHTML = displayNode;
 }
 
 // Check connectivity function
@@ -47,7 +55,7 @@ function hasNetwork(online) {
   } else {
     connectivityContainer.classList.remove(`user-online`);
     upgradeBtn.classList.remove(`inner-space`);
-    offlineWrapper.classList.remove(`user-connected`);
+    offlineWrapper.classList.add(`user-connected`);
   }
 }
 
@@ -110,7 +118,9 @@ connectivityStatus.addEventListener(
     profileBtn.classList.remove(`active`);
     // Set SVG to the arrow down icon
     profileBtn.innerHTML = `
-      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <div class="wrapper">
+        <img src="./app-components/app-img/user-data/account-img-03.jpg" alt="">
+      </div>
       <span id="username">${eventUser}</span>
       <a href="./index.html" id="show-options">
       <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
@@ -150,7 +160,9 @@ profileBtn.addEventListener(
     if (userListPanel.classList.contains(`panel-visible`)) {
       userListPanel.classList.remove(`panel-visible`);
       profileBtn.innerHTML = `
-      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <div class="wrapper">
+        <img src="./app-components/app-img/user-data/account-img-03.jpg" alt="">
+      </div>
       <span id="username">${eventUser}</span>
       <a href="./index.html" id="show-options">
       <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
@@ -160,7 +172,9 @@ profileBtn.addEventListener(
     } else {
       userListPanel.classList.add(`panel-visible`);
       profileBtn.innerHTML = `
-      <img src="./app-components/app-img/user-data/account-img.jpg" alt="">
+      <div class="wrapper">
+        <img src="./app-components/app-img/user-data/account-img-03.jpg"  alt="">
+      </div>
       <span id="username">${eventUser}</span>
       <a href="./index.html" id="show-options">
       <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M13 10L8 4.206 3 10z"></path></svg>
@@ -182,6 +196,42 @@ mainInterface.addEventListener(
     } else {
       mainHeader.classList.remove(`opaqueBar`);
     }
+  },
+  false
+);
+
+// When the profile option is selected, show the profile overlay
+
+profileOption.addEventListener(
+  `click`,
+  (e) => {
+    e.preventDefault();
+    userProfileOverlay.classList.add(`active`);
+  },
+  false
+);
+
+// When user profile overlay is clicked remove the profile panel
+
+userProfileOverlay.addEventListener(
+  `click`,
+  (e) => {
+    // Get username from browser settings
+    const eventUser = localStorage.getItem(`username`);
+    JSON.stringify(`accountUserName`);
+    // Run the code after fetching
+    e.preventDefault();
+    userListPanel.classList.remove(`panel-visible`);
+    profileBtn.innerHTML = `
+    <div class="wrapper">
+      <img src="./app-components/app-img/user-data/account-img-03.jpg" alt="">
+    </div>
+    <span id="username">${eventUser}</span>
+    <a href="./index.html" id="show-options">
+    <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
+    </a>
+    `;
+    profileBtn.classList.remove(`active`);
   },
   false
 );

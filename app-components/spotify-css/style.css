@@ -625,17 +625,30 @@ section#main-interface {
   .t-functions
   section.user-settings
   button.user-toggle
-  img {
-  max-width: 28px;
+  .wrapper {
   width: 28px;
-  max-height: 28px;
+  max-width: 28px;
   height: 28px;
+  max-height: 28px;
+  overflow: hidden;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   margin-right: 2px;
+}
+
+.app
+  main.main-app
+  section#top-bar
+  .t-functions
+  section.user-settings
+  button.user-toggle
+  img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
 }
 
 .app
@@ -665,6 +678,12 @@ section#main-interface {
   margin-right: 2px;
   padding-right: 2px;
   color: #ffffff;
+}
+
+.top-spacer {
+  display: block;
+  width: 100%;
+  height: 10vh;
 }
 
 .app
@@ -807,14 +826,213 @@ section#main-interface {
 }
 
 .app .music-interface section#userProfile {
-  display: block;
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
   width: calc(100% - 280px);
   height: calc(100% - 10vh);
   overflow-y: auto;
-  background: #8b113a;
+  background: linear-gradient(180deg, #093957 30%, #0a4970);
+}
+
+.app .music-interface section#userProfile.active {
+  display: block !important;
+}
+
+.app .music-interface section#userProfile .container {
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+
+.app .music-interface section#userProfile .container .img-container {
+  display: inline;
+  position: relative;
+  width: 240px;
+  max-width: 240px;
+  max-height: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: 0 0 44px #000000cc;
+  object-fit: contain;
+  object-position: top;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .img-container
+  .choose-img {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00000090;
+  z-index: 99999;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .img-container:hover
+  .choose-img {
+  display: flex;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .img-container:hover
+  .choose-img
+  h4 {
+  user-select: none;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .img-container
+  .choose-img
+  svg {
+  fill: #eeeeee;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+.app .music-interface section#userProfile .container .img-container img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.app .music-interface section#userProfile .container .content-container {
+  margin-left: 24px;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  h4.small-text {
+  color: #ffffff;
+  font-size: 0.79rem;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  h2#profile-name {
+  font-size: 6.4rem;
+  margin-bottom: 8px;
+  letter-spacing: -2.5px;
+  word-spacing: -5px;
+  color: #ffffff;
+  font-family: 'Spotify-Circular-bl', sans-serif;
+  font-weight: 900 !important;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats {
+  margin-bottom: 16px;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats
+  span.user-stat {
+  position: relative;
+  margin-right: 12px;
+  font-size: 0.94rem;
+  color: #aaaabb;
+  font-family: 'Spotify-Circular-b', sans-serif;
+  font-weight: 200 !important;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats
+  span.user-stat::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #cccccc;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats
+  span.user-stat.following,
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats
+  span.user-stat.followers {
+  color: #ffffff;
+}
+
+.app
+  .music-interface
+  section#userProfile
+  .container
+  .content-container
+  .user-stats
+  span.user-stat:last-child::before {
+  display: none;
 }
 
 /* Bottom bar */
