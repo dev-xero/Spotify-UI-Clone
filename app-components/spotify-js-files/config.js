@@ -1,8 +1,14 @@
+const followingNode = `2`;
+const followersNode = `0`;
+
 window.addEventListener(
   `load`,
   () => {
-    localStorage.setItem(`username`, `Code Ninja 15`);
+    // eslint-disable-next-line no-undef
+    localStorage.setItem(`username`, `${userComponent}`);
     localStorage.setItem(`accountType`, `Free`);
+    localStorage.setItem(`following`, `${followingNode}`);
+    localStorage.setItem(`followers`, `${followersNode}`);
   },
   false
 );

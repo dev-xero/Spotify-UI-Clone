@@ -19,6 +19,17 @@
 	</head>
 	<body>
 
+		<section class="loader-spotify">
+			<div class="container">
+				<img src="./app-components/app-img/brand/default/Spotify-text-default-light.svg" alt="">
+				<div class="spinner-svg">
+					<svg class="loader" viewBox="0 0 100 100">
+						<circle class="path" cx='50' cy='50' r="20" fill="none" stroke-width='3' stroke-miter-limit="10">
+					</svg>
+				</div>
+			</div>
+		</section>
+
 		<section class="app" id="app">
 			<main class="main-app">
 				<nav class="sidebar" role="navigation" id="sidebar">
@@ -180,11 +191,39 @@
 									</div>
 									<div class="content-container">
 										<h4 class="small-text">PROFILE</h4>
-										<h2 id="profile-name">User</h2>
+										<h2 id="profile-name" title="Edit Profile">User</h2>
 										<div class="user-stats">
 											<span class="user-stat playlists"><span class="inner-p play">2</span> Public Playlists</span>
-											<span class="user-stat following"><span class="inner-p follow">286</span> Following</span>
-											<span class="user-stat followers"><span class="inner-p follow">26.7M</span> Followers</span>
+											<span class="user-stat following"><span class="inner-p following">286</span> Following</span>
+											<span class="user-stat followers"><span class="inner-p followers">26.7M</span> Followers</span>
+										</div>
+									</div>
+								</div>
+								<div id="upload-edit">
+									<div class="overlay"></div>
+									<div class="edit-box">
+										<div class="top">
+											<h4>Profile details</h4>
+											<a href="./index.html" class="close-details">
+												<svg role="img" height="16" width="16" viewBox="0 0 16 16">
+													<path d="M14.354 2.353l-.708-.707L8 7.293 2.353 1.646l-.707.707L7.293 8l-5.647 5.646.707.708L8 8.707l5.646 5.647.708-.708L8.707 8z">
+													</path>
+												</svg>
+											</a>
+										</div>
+										<div class="body">
+											<div class="img-container">
+												<img src="./app-components/app-img/user-data/account-img-03.jpg" alt="" id="user-src-img">
+											</div>
+											<div class="content">
+												<input type="text" id="usernameEdit" value="">
+												<button id="save-user-name">Save</button>
+											</div>
+										</div>
+										<div class="bottom">
+											<p>
+												By proceeding, you agree to give Spotify access to the image you choose to upload. Please make sure you have the right to upload the image.
+											</p>
 										</div>
 									</div>
 								</div>

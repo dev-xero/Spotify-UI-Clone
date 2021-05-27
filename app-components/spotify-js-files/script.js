@@ -1,5 +1,8 @@
 // Variables declaration
 
+let userComponent = `Code Ninja 15`;
+
+const loaderSpotify = document.querySelector(`section.loader-spotify`);
 const appComponent = document.querySelector(`section#app`);
 const appSideBar = document.querySelector(`nav#sidebar`);
 const sidebarHome = document.querySelector(`a#home-link`);
@@ -24,6 +27,15 @@ const settingsDisplayUsername = appComponent.querySelector(`#profile-name`);
 const profileOption = appComponent.querySelector(`a#profile`);
 const userProfileOverlay = appComponent.querySelector(`section#userProfile`);
 
+const followingDisplay = appComponent.querySelector(`span.inner-p.following`);
+const followersDisplay = appComponent.querySelector(`span.inner-p.followers`);
+
+const modal = appComponent.querySelector(`div#upload-edit`);
+const displayModal = appComponent.querySelector(`h2#profile-name`);
+const exitModal = appComponent.querySelector(`a.close-details`);
+const textBoxModal = appComponent.querySelector(`input#usernameEdit`);
+const saveConfig = appComponent.querySelector(`button#save-user-name`);
+
 // Check user account type from browser storage
 
 function checkAccount() {
@@ -35,14 +47,28 @@ function checkAccount() {
   } else {
     upgradeBtn.classList.add(`pro-user`);
   }
+
   // Set display username from browser storage
   const accountUserName = localStorage.getItem(`username`);
   JSON.stringify(`accountUserName`);
   displayUsername.innerHTML = accountUserName;
+
   // Set display username for settings from browser storage
   const displayNode = localStorage.getItem(`username`);
   JSON.stringify(displayNode);
   settingsDisplayUsername.innerHTML = displayNode;
+
+  // Set following number
+  const displayFollowing = localStorage.getItem(`following`);
+  const stringifiedFollowing = JSON.parse(displayFollowing);
+  // eslint-disable-next-line prefer-destructuring
+  followingDisplay.innerHTML = stringifiedFollowing;
+
+  // Set followers number
+  const displayFollowers = localStorage.getItem(`followers`);
+  const stringifiedFollowers = JSON.parse(displayFollowers);
+  // eslint-disable-next-line prefer-destructuring
+  followersDisplay.innerHTML = stringifiedFollowers;
 }
 
 // Check connectivity function
@@ -57,6 +83,34 @@ function hasNetwork(online) {
     upgradeBtn.classList.remove(`inner-space`);
     offlineWrapper.classList.add(`user-connected`);
   }
+}
+
+function modalFunction() {
+  // Get username
+  textBoxModal.value = localStorage.getItem(`username`);
+  // Exit modal event
+  exitModal.addEventListener(
+    `click`,
+    (e) => {
+      e.preventDefault();
+      modal.classList.remove(`edit-modal`);
+    },
+    false
+  );
+  // save config event
+  saveConfig.addEventListener(
+    `click`,
+    () => {
+      // eslint-disable-next-line no-var
+      var newConfig = textBoxModal.value;
+      userComponent = newConfig;
+      localStorage.setItem(`username`, `${userComponent}`);
+      // Grab current username
+      displayModal.innerHTML = newConfig;
+      modal.classList.remove(`edit-modal`);
+    },
+    false
+  );
 }
 
 // Attach click event for all lists in the sidebar
@@ -101,6 +155,10 @@ window.onload = () => {
   // Check account type
 
   checkAccount();
+
+  // Remove the loader overlay
+  loaderSpotify.classList.add(`finished-loading`);
+  appComponent.classList.add(`finished-loading`);
 };
 
 // When connectivity icon is clicked, display tooltip
@@ -207,6 +265,22 @@ profileOption.addEventListener(
   (e) => {
     e.preventDefault();
     userProfileOverlay.classList.add(`active`);
+    // Get username from browser settings
+    const eventUser = localStorage.getItem(`username`);
+    JSON.stringify(`accountUserName`);
+    // Run the code after fetching
+    e.preventDefault();
+    userListPanel.classList.remove(`panel-visible`);
+    profileBtn.innerHTML = `
+    <div class="wrapper">
+      <img src="./app-components/app-img/user-data/account-img-03.jpg" alt="">
+    </div>
+    <span id="username">${eventUser}</span>
+    <a href="./index.html" id="show-options">
+    <svg role="img" height="16" width="16" class="Svg-ulyrgf-0 cMigZB f6406a56d35aea2a3598f6f270ef156c-scss" viewBox="0 0 16 16"><path d="M3 6l5 5.794L13 6z"></path></svg>
+    </a>
+    `;
+    profileBtn.classList.remove(`active`);
   },
   false
 );
@@ -235,3 +309,16 @@ userProfileOverlay.addEventListener(
   },
   false
 );
+
+displayModal.addEventListener(
+  `click`,
+  () => {
+    modal.classList.add(`edit-modal`);
+    modalFunction();
+  },
+  false
+);
+
+// eslint-disable-next-line no-undef
+userComponent = userConfig;
+localStorage.setItem(`username`, `${userComponent}`);
